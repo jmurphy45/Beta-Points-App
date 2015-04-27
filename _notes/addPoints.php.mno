@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_addPoints" value="name:event_ID;datatype:int,name:event_name;datatype:string,name:event_location;datatype:string,name:event_contact;datatype:string,name:event_points;datatype:int,name:event_start;datatype:date,name:event_end;datatype:date,name:event_expiration;datatype:date,name:event_level;datatype:int,name:event_brothersOnly;datatype:int,name:event_hidden;datatype:int,name:events_multiple;datatype:int,name:event_deletion;datatype:int" />
+</info>

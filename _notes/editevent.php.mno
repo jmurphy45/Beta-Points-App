@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_editevent" value="name:event_name;datatype:string" />
+	<infoitem key="UD_eventedit" value="name:event_ID;datatype:int,name:event_name;datatype:string,name:event_points;datatype:int,name:event_start;datatype:date,name:event_end;datatype:date,name:event_expiration;datatype:date,name:event_level;datatype:int,name:event_brothersOnly;datatype:int,name:event_hidden;datatype:int,name:events_multiple;datatype:int,name:event_deletion;datatype:int" />
+	<infoitem key="UD_editEvent_data" value="name:event_ID;datatype:int,name:event_name;datatype:string,name:event_points;datatype:int,name:event_start;datatype:date,name:event_end;datatype:date,name:event_expiration;datatype:date,name:event_level;datatype:int,name:event_brothersOnly;datatype:int,name:event_hidden;datatype:int,name:events_multiple;datatype:int,name:event_deletion;datatype:int" />
+	<infoitem key="UD_eventedit_data" value="name:event_name;datatype:string" />
+	<infoitem key="UD_Recordset1" value="name:event_ID;datatype:int,name:event_name;datatype:string,name:event_points;datatype:int,name:event_start;datatype:date,name:event_end;datatype:date,name:event_expiration;datatype:date,name:event_level;datatype:int,name:event_brothersOnly;datatype:int,name:event_hidden;datatype:int,name:events_multiple;datatype:int,name:event_deletion;datatype:int" />
+</info>
