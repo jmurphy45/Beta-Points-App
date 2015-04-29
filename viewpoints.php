@@ -1,9 +1,11 @@
 <?php
 session_start();
-if($_SESSION["level"] == 2 || $_SESSION["level"] == 1){
+if($_SESSION["level"] == 2){
 	echo 1;
 	header( "Location: restrict.php" );
 }else if($_SESSION["level"] == 4){
+	header( "Location: restrict.php" );
+}else if($_SESSION["level"] == 1){
 	header( "Location: restrict.php" );
 }
 ?>
@@ -40,56 +42,42 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
+$colname_viewpoints = "-1";
+if (isset($_SESSION['zeta'])) {
+  $colname_viewpoints = $_SESSION['zeta'];
+}
 mysql_select_db($database_EventTracker, $EventTracker);
-$query_addPoints = "SELECT * FROM events where `event_deletion` = 1";
-$addPoints = mysql_query($query_addPoints, $EventTracker) or die(mysql_error());
-$row_addPoints = mysql_fetch_assoc($addPoints);
-$totalRows_addPoints = mysql_num_rows($addPoints);
+$query_viewpoints = sprintf("SELECT ID, event_name, time_stamp FROM eventsandusers WHERE zeta_num = %s ORDER BY time_stamp DESC", GetSQLValueString($colname_viewpoints, "text"));
+$viewpoints = mysql_query($query_viewpoints, $EventTracker) or die(mysql_error());
+$row_viewpoints = mysql_fetch_assoc($viewpoints);
+$totalRows_viewpoints = mysql_num_rows($viewpoints);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Add Beta Points</title>
+<title>view Beta Points</title>
 </head>
 
 <body>
+<table border="1">
+  <tr>
+    <td>ID</td>
+    <td>Event Name</td>
+    <td>Time Entered</td>
+    <td>Delete</td>
+  </tr>
+  <?php do { ?>
+    <tr>
+      <td><?php echo $row_viewpoints['ID']; ?></td>
+      <td><?php echo $row_viewpoints['event_name']; ?></td>
+      <td><?php echo $row_viewpoints['time_stamp']; ?></td>
+      <td><a href="pointDeleter.php?ID=<?php echo $row_viewpoints['ID']; ?>">Delete</a></td>
+    </tr>
+    <?php } while ($row_viewpoints = mysql_fetch_assoc($viewpoints)); ?>
+</table>
 </body>
-<p>Adding points for: <?php $username= $_SESSION["username"]; echo $username; ?></p>
-
-<?php
-	if(isset($_GET['flag'])) {
-    	$error_flag = $_GET['flag'];
-	}else{
-		$error_flag = 1;
-	}
-	
-	if($error_flag == 0){
-		echo "<p>This event can only be entered one time.</p>";
-	}else if($error_flag == 3){
-		$exp = $_GET['exp'];
-		echo "<p>The timeline to enter the event has expired. The expiration date is $exp </p>";	
-	}
-
-?>
-<form action="betaPointsAdder.php" method="post" name="addPoints" id="addPoints">
-  <select name="events">
-    <?php
-do {  
-?>
-    <option value="<?php echo $row_addPoints['event_ID']?>"><?php echo $row_addPoints['event_name']?></option>
-    <?php
-} while ($row_addPoints = mysql_fetch_assoc($addPoints));
-  $rows = mysql_num_rows($addPoints);
-  if($rows > 0) {
-      mysql_data_seek($addPoints, 0);
-	  $row_addPoints = mysql_fetch_assoc($addPoints);
-  }
-?>
-  </select>
-</form>
-<button type="submit" form="addPoints" value="Submit">Submit</button>
 </html>
 <?php
-mysql_free_result($addPoints);
+mysql_free_result($viewpoints);
 ?>

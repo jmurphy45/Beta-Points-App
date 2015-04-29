@@ -58,19 +58,12 @@
 		//header('Location: userRegistration.php')
 	}
 	mysqli_close($conn);
-  
 
-	
-	
 	//if ($send_mail == true){
 		//$subject = "Lambda Chi Alpha Registration";
 		//$msg = "Thank you for registering";
 		//mail($user_email,$subject,$msg);
 	//}
-	
-	
-	//header('Location: .php');
 
-	//header('Location: userRegistration.php')
 	
 ?>

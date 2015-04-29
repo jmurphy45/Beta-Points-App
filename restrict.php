@@ -6,6 +6,6 @@
 </head>
 
 <body>
-<p>Your are not allowed on this page</p>
+<p>Your are not allowed on this page. Redeirecting to Dashboard</p>
 </body>
 </html>

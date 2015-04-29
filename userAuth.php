@@ -29,7 +29,9 @@
 	}
 	$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 	$num = mysqli_num_rows($result);
-	
+/* 	if($row['user_update'] != 0){
+		header( "Location: update.php" );
+	} */
 	if($row['user_username'] == $user_username && $row['user_password'] == $user_password){
 		echo "matched";
 		if(isset($_POST['remember'])){

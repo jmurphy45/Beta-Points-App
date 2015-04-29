@@ -19,13 +19,11 @@
 
       <form ACTION="userAuth.php" METHOD="POST" class="form-signin" id="login">
         <h2 class="form-signin-heading">Please sign in</h2>
-        
         <input name="username" type="text" id="username" class="form-control" placeholder="Email address" required="" autofocus=""/>
-      
         <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required=""/>
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input name="remember" type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
