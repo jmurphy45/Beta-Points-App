@@ -1,5 +1,6 @@
 <?php
 	class admin{
+		include '';
 		function __construct() {
 			print "In BaseClass constructor\n";
 		}
@@ -36,7 +37,12 @@
 
 		function search(){
 
-			
+
+		}
+
+		function display_title(){
+
+
 		}
 
 	}
