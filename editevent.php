@@ -14,13 +14,13 @@
 </head>
 <body>
 	
-<form action="eventEditer.php" method="post" id="form2">
-		<p>Event ID:	<input name="event_ID" type="text"  value="<?php echo $_GET['id']; ?>" size="5" readonly="readonly" ></p>
-    	<p>Event Name:	<input value="<?php echo $_GET['name']; ?>" name="event_name" type="text"  /></p>
-      	<p>Event Start Date:	<input value="<?php echo $_GET['end']; ?>" name="event_start" type="date" data-format="dd/MM/yyyy hh:mm:ss" /></p>
-      	<p>Event End Date:	<input value="<?php echo $_GET['start']; ?>" name="event_end" type="date" data-format="dd/MM/yyyy hh:mm:ss" /></p>
-      	<p>Event expiration Date:	<input value="<?php echo $_GET['exp']; ?>" name="event_expiration" type="date" /></p>
-      	<p>Event Level:	<select selected="" name="event_level">
+<form class="form-group" action="eventEditer.php" method="post" id="form2">
+		<p>Event ID:	<input class="form-control" name="event_ID" type="text"  value="<?php echo $_GET['id']; ?>" size="5" readonly="readonly" ></p>
+    	<p>Event Name:	<input class="form-control" value="<?php echo $_GET['name']; ?>" name="event_name" type="text"  /></p>
+      	<p>Event Start Date:	<input class="form-control" value="<?php echo $_GET['end']; ?>" name="event_start" type="date" data-format="dd/MM/yyyy hh:mm:ss" /></p>
+      	<p>Event End Date:	<input class="form-control" value="<?php echo $_GET['start']; ?>" name="event_end" type="date" data-format="dd/MM/yyyy hh:mm:ss" /></p>
+      	<p>Event expiration Date:	<input class="form-control" value="<?php echo $_GET['exp']; ?>" name="event_expiration" type="date" /></p>
+      	<p>Event Level:	<select class="form-control" name="event_level">
         <?php 
 			$data =  $_GET['level'];
 			if($data == "Active"){
@@ -39,8 +39,8 @@
 		?>
       	</select>
    	  </p>
-      	<p>Points Value:	<input value="<?php echo $_GET['points']; ?>"name="event_points" type="text"></p>
-      	<p>Hide Event:	<select name="event_hidden">
+      	<p>Points Value:	<input class="form-control" value="<?php echo $_GET['points']; ?>"name="event_points" type="text"></p>
+      	<p>Hide Event:	<select class="form-control" name="event_hidden">
         <?php 
 			$data =  $_GET['hide'];
 			if($data == "True"){
@@ -52,7 +52,7 @@
 			}
 		?>
 </select></p>
-        <p>Multiple Event Recording:	 <select name="event_multiple">
+        <p>Multiple Event Recording:	 <select class="form-control" name="event_multiple">
         <?php 
 			$data =  $_GET['multiple'];
 			if($data == "True"){
@@ -64,7 +64,7 @@
 			}
 		?>
 </select></p>
-        <p>Brothers Only: <select name="event_brothersOnly">
+        <p>Brothers Only: <select class="form-control" name="event_brothersOnly">
           <?php 
 			$data =  $_GET['brothers'];
 			if($data == "True"){
