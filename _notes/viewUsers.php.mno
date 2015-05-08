@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_admin_view_user" value="name:ID;datatype:int,name:user_zeta;datatype:int,name:user_firstName;datatype:string,name:user_lastName;datatype:string,name:user_email;datatype:string,name:user_phoneNumber;datatype:string,name:user_username;datatype:string,name:user_level;datatype:int" />
+	<infoitem key="UD_admin_view_inactives" value="name:ID;datatype:int,name:user_zeta;datatype:int,name:user_firstName;datatype:string,name:user_lastName;datatype:string,name:user_email;datatype:string,name:user_phoneNumber;datatype:string,name:user_username;datatype:string,name:user_level;datatype:int" />
+	<infoitem key="UD_view_actives" value="name:ID;datatype:int,name:user_zeta;datatype:int,name:user_firstName;datatype:string,name:user_lastName;datatype:string,name:user_email;datatype:string,name:user_phoneNumber;datatype:string,name:user_username;datatype:string,name:user_level;datatype:int" />
+</info>
