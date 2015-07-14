@@ -69,26 +69,24 @@ var data = [
 			reformatYear(i, array);
 		}
 	}
+	function formatToDate(index, array, options){
+		if(options[0] == null || options[1] == null || options[2] == null){
+			throw "Variable for the standard date format are not correct. Make sure that you have the year month and date as paremeters, other parameters are optional";
+		}else{
+			return new Date(options[0], options[1], options[2], options[3] || 0, options[4] || 0, options[5] || 0, options[6] || 0);
+		}
+	}
+	function getmilliseconds(date){
+		return Date.parse(date);
+	}
 	//getDate(0, data);
 	formatArray(data);
 	console.log(data.length);
 	function sortbyDate(array){
 		p = 0;
-		// if(getYear(0, array) > getYear(1, array)){
-		// 	temp = array[0];
-		// 	array[0] = array[1];
-		// 	array[1] = temp;
-		// }
 		for( i in array){
 			p++;
 			for(j in array){
-				p++;
-				if(getYear(i, array) > getYear(j, array)){
-					console.log("transfering");
-					temp = array[i];
-					array[i] = array[j];
-					array[j] = temp;
-				}
 			}
 		}
 		console.log(p);

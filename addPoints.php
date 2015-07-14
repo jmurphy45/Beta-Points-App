@@ -3,8 +3,8 @@ session_start();
 if($_SESSION["level"] == 2 || $_SESSION["level"] == 1){
 	echo 1;
 	header( "Location: restrict.php" );
-}else if($_SESSION["level"] == 4){
-	header( "Location: restrict.php" );
+}else if($_SESSION["level"] == 4 || $_SESSION["level"] == 3){
+	header( "Location: dashboard.php" );
 }
 ?>
 <?php require_once('Connections/EventTracker.php'); ?>
